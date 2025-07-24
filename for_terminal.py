@@ -11,7 +11,7 @@ def set_default():
     mat_table = [["-", "-", "-"], ["-", "-", "-"], ["-", "-", "-"]]
     current = random.choice(["O","X"])
 
-def is_won(rc):
+def is_won():
     # ROWS
     for i in range(3):
         if "".join(mat_table[i]) in ['XXX', 'OOO']:
@@ -50,7 +50,7 @@ def get_turn():
         col = int(input("Enter column: "))
         if is_valid(row, col):
             update(row, col, current)
-            if is_won(mat_table):
+            if is_won():
                 print(f"{current} won!".format(current=current))
                 for i in mat_table:
                     print(*i)
